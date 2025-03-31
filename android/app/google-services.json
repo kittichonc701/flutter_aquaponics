@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709758517780",
+    "project_id": "aquaponics-46127",
+    "storage_bucket": "aquaponics-46127.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709758517780:android:18faf8ea742b34e1991d01",
+        "android_client_info": {
+          "package_name": "com.example.aquaponics"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlw20VWsM8oCjfpC46-uDYjaR2QP-mDhM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
