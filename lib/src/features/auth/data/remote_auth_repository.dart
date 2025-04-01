@@ -1,37 +1,57 @@
-import 'package:aquaponics/src/features/authentication/data/firebase_app_user.dart';
-import 'package:aquaponics/src/features/authentication/domain/app_user.dart';
+import 'package:aquaponics/src/features/auth/data/firebase_app_user.dart';
+import 'package:aquaponics/src/features/auth/domain/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-part 'auth_repository.g.dart';
+part 'remote_auth_repository.g.dart';
 
-class AuthRepository {
-  AuthRepository(this._auth);
+abstract class RemoteAuthRepository {
+  Future<AppUser> signInWithEmailAndPassword(String email, String password);
+  Future<AppUser> createUserWithEmailAndPassword(String email, String password);
+  Future<void> signOut();
+  Stream<AppUser?> authStateChanges();
+  Stream<AppUser?> idTokenChanges();
+}
+
+@Riverpod(keepAlive: true)
+RemoteAuthRepository localAuthRepository(Ref ref) {
+  throw UnimplementedError();
+}
+
+class FirebaseAuthRepository implements RemoteAuthRepository {
+  FirebaseAuthRepository(this._auth);
   final FirebaseAuth _auth;
 
-  Future<void> signInWithEmailAndPassword(String email, String password) {
-    return _auth.signInWithEmailAndPassword(
+  @override
+  Future<AppUser> signInWithEmailAndPassword(
+      String email, String password) async {
+    final userCredential = await _auth.signInWithEmailAndPassword(
       email: email,
       password: password,
     );
+    return FirebaseAppUser(userCredential.user!);
   }
 
-  Future<void> createUserWithEmailAndPassword(String email, String password) {
-    return _auth.createUserWithEmailAndPassword(
+  @override
+  Future<AppUser> createUserWithEmailAndPassword(
+      String email, String password) async {
+    final userCredential = await _auth.createUserWithEmailAndPassword(
       email: email,
       password: password,
     );
+    return FirebaseAppUser(userCredential.user!);
   }
 
-  Future<void> signOut() {
-    return _auth.signOut();
-  }
+  @override
+  Future<void> signOut() => _auth.signOut();
 
+  @override
   Stream<AppUser?> authStateChanges() {
     return _auth.authStateChanges().map(_convertUser);
   }
 
+  @override
   Stream<AppUser?> idTokenChanges() {
     return _auth.idTokenChanges().map(_convertUser);
   }
@@ -43,8 +63,8 @@ class AuthRepository {
 }
 
 @Riverpod(keepAlive: true)
-AuthRepository authRepository(Ref ref) {
-  return AuthRepository(FirebaseAuth.instance);
+FirebaseAuthRepository authRepository(Ref ref) {
+  return FirebaseAuthRepository(FirebaseAuth.instance);
 }
 
 // * Using keepAlive since other providers need it to be an

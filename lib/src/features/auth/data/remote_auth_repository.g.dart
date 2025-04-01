@@ -1,16 +1,34 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'auth_repository.dart';
+part of 'remote_auth_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$authRepositoryHash() => r'fa5b8337b7daf1a6e6ab14268c91ea9089629ec0';
+String _$localAuthRepositoryHash() =>
+    r'ae78f41b5aa9ee96c961ea9aa953f08272c5714f';
+
+/// See also [localAuthRepository].
+@ProviderFor(localAuthRepository)
+final localAuthRepositoryProvider = Provider<RemoteAuthRepository>.internal(
+  localAuthRepository,
+  name: r'localAuthRepositoryProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$localAuthRepositoryHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef LocalAuthRepositoryRef = ProviderRef<RemoteAuthRepository>;
+String _$authRepositoryHash() => r'dad4308ede4c37101fdfd0f2a9340eacacf71a10';
 
 /// See also [authRepository].
 @ProviderFor(authRepository)
-final authRepositoryProvider = Provider<AuthRepository>.internal(
+final authRepositoryProvider = Provider<FirebaseAuthRepository>.internal(
   authRepository,
   name: r'authRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
@@ -22,7 +40,7 @@ final authRepositoryProvider = Provider<AuthRepository>.internal(
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef AuthRepositoryRef = ProviderRef<AuthRepository>;
+typedef AuthRepositoryRef = ProviderRef<FirebaseAuthRepository>;
 String _$authStateChangesHash() => r'199a9132d64e85888f728def3717a5163d8558aa';
 
 /// See also [authStateChanges].

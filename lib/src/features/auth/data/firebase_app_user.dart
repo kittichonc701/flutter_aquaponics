@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/features/authentication/domain/app_user.dart';
+import 'package:aquaponics/src/features/auth/domain/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 /// Wrapper for the [User] class inside the firebase_auth package
@@ -14,6 +14,12 @@ class FirebaseAppUser implements AppUser {
 
   @override
   bool get emailVerified => _user.emailVerified;
+
+  @override
+  String? get displayName => _user.displayName;
+
+  @override
+  String? get photoURL => _user.photoURL;
 
   // * Note: after calling this method, [emailVerified] isn't updated until the
   // * next time an ID token is generated for the user.
@@ -41,4 +47,14 @@ class FirebaseAppUser implements AppUser {
 
   @override
   Future<void> forceRefreshIdToken() => _user.getIdToken(true);
+
+  @override
+  String toJson() {
+    throw UnimplementedError();
+  }
+
+  @override
+  Map<String, dynamic> toMap() {
+    throw UnimplementedError();
+  }
 }

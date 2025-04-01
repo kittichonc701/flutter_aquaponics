@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:aquaponics/src/features/authentication/domain/app_user.dart';
+import 'package:aquaponics/src/features/auth/domain/app_user.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
