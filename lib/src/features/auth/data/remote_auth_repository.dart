@@ -15,7 +15,7 @@ abstract class RemoteAuthRepository {
 }
 
 @Riverpod(keepAlive: true)
-RemoteAuthRepository localAuthRepository(Ref ref) {
+RemoteAuthRepository remoteAuthRepository(Ref ref) {
   throw UnimplementedError();
 }
 

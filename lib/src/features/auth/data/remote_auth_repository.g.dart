@@ -6,24 +6,24 @@ part of 'remote_auth_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$localAuthRepositoryHash() =>
-    r'ae78f41b5aa9ee96c961ea9aa953f08272c5714f';
+String _$remoteAuthRepositoryHash() =>
+    r'ebcb8f7b6e9e5f2589e2e99108c8b8641f4d6535';
 
-/// See also [localAuthRepository].
-@ProviderFor(localAuthRepository)
-final localAuthRepositoryProvider = Provider<RemoteAuthRepository>.internal(
-  localAuthRepository,
-  name: r'localAuthRepositoryProvider',
+/// See also [remoteAuthRepository].
+@ProviderFor(remoteAuthRepository)
+final remoteAuthRepositoryProvider = Provider<RemoteAuthRepository>.internal(
+  remoteAuthRepository,
+  name: r'remoteAuthRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$localAuthRepositoryHash,
+      : _$remoteAuthRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef LocalAuthRepositoryRef = ProviderRef<RemoteAuthRepository>;
+typedef RemoteAuthRepositoryRef = ProviderRef<RemoteAuthRepository>;
 String _$authRepositoryHash() => r'dad4308ede4c37101fdfd0f2a9340eacacf71a10';
 
 /// See also [authRepository].

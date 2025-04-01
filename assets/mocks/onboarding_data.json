@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Welcome to Aquaponics",
+    "body": "Aquaponics combines aquaculture (raising fish) and hydroponics (growing plants without soil) in a symbiotic environment.",
+    "imagePath": "assets/images/aquaponics_intro_1.jpg"
+  },
+  {
+    "title": "Sustainable Ecosystem",
+    "body": "Fish waste provides organic nutrients for plants, and plants naturally filter the water for the fish. It's a perfect cycle!",
+    "imagePath": "assets/images/aquaponics_intro_2.jpg"
+  },
+  {
+    "title": "Grow Fresh Food",
+    "body": "With aquaponics, you can grow organic vegetables and raise healthy fish all year round, even in small spaces.",
+    "imagePath": "assets/images/aquaponics_intro_3.jpg"
+  },
+  {
+    "title": "Water Efficient",
+    "body": "Aquaponics uses 90% less water than traditional agriculture by recycling water through the system.",
+    "imagePath": "assets/images/aquaponics_intro_4.jpg"
+  },
+  {
+    "title": "Get Started",
+    "body": "Start your aquaponics journey today! Monitor your system and track growth with our easy-to-use app.",
+    "imagePath": "assets/images/aquaponics_intro_5.jpg"
+  }
+]

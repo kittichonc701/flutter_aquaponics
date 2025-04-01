@@ -1,5 +1,5 @@
-import 'package:aquaponics/src/core/localization/string_hardcoded.dart';
-import 'package:aquaponics/src/core/routing/app_router.dart';
+import 'package:aquaponics/src/localization/string_hardcoded.dart';
+import 'package:aquaponics/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

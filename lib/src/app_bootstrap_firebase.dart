@@ -1,5 +1,5 @@
 import 'package:aquaponics/src/app_bootstrap.dart';
-import 'package:aquaponics/src/core/exceptions/async_error_logger.dart';
+import 'package:aquaponics/src/exceptions/async_error_logger.dart';
 import 'package:aquaponics/src/features/control/data/local/local_history_repository.dart';
 import 'package:aquaponics/src/features/control/data/local/sembast_history_repository.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

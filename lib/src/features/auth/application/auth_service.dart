@@ -2,6 +2,10 @@ import 'package:aquaponics/src/features/auth/data/local_auth_repository.dart';
 import 'package:aquaponics/src/features/auth/data/remote_auth_repository.dart';
 import 'package:aquaponics/src/features/auth/domain/app_user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+part 'auth_service.g.dart';
 
 class AuthService {
   AuthService({
@@ -79,4 +83,14 @@ class AuthService {
   Future<void> clearCache() async {
     await _local.clearCache();
   }
+}
+
+@Riverpod(keepAlive: true)
+AuthService authService(Ref ref) {
+  final remoteAuthRepository = ref.watch(remoteAuthRepositoryProvider);
+  final localAuthRepository = ref.watch(localAuthRepositoryProvider);
+  return AuthService(
+    remote: remoteAuthRepository,
+    local: localAuthRepository,
+  );
 }

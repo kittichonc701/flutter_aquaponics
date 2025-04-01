@@ -1,5 +1,5 @@
-import 'package:aquaponics/src/core/exceptions/app_exception.dart';
-import 'package:aquaponics/src/core/exceptions/error_logger.dart';
+import 'package:aquaponics/src/exceptions/app_exception.dart';
+import 'package:aquaponics/src/exceptions/error_logger.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Error logger class to keep track of all AsyncError states that are set

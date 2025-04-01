@@ -1,13 +1,13 @@
 import 'package:aquaponics/src/features/auth/data/remote_auth_repository.dart';
 import 'package:aquaponics/src/features/auth/presentation/account/account_screen.dart';
-import 'package:aquaponics/src/features/auth/presentation/onboarding/onboarding_screen.dart';
+import 'package:aquaponics/src/features/onboarding/presentation/onboarding_screen.dart';
 import 'package:aquaponics/src/features/auth/presentation/sign_in/sign_in_screen.dart';
 import 'package:aquaponics/src/features/control/presentation/control/control_panel_screen.dart';
 import 'package:aquaponics/src/features/control/presentation/history/history_screen.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/dash_board_screen.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/notifications_screen.dart';
-import 'package:aquaponics/src/core/routing/go_router_refresh_stream.dart';
-import 'package:aquaponics/src/core/routing/scaffold_with_nested_navigation.dart';
+import 'package:aquaponics/src/routing/go_router_refresh_stream.dart';
+import 'package:aquaponics/src/routing/scaffold_with_nested_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:aquaponics/src/core/exceptions/app_exception.dart';
+import 'package:aquaponics/src/exceptions/app_exception.dart';
 import 'package:riverpod/riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

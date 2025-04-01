@@ -1,9 +1,9 @@
 import 'dart:ui';
 
 import 'package:aquaponics/src/app.dart';
-import 'package:aquaponics/src/core/exceptions/error_logger.dart';
+import 'package:aquaponics/src/exceptions/error_logger.dart';
 import 'package:aquaponics/src/features/auth/application/user_token_refresh_service.dart';
-import 'package:aquaponics/src/core/localization/string_hardcoded.dart';
+import 'package:aquaponics/src/localization/string_hardcoded.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
