@@ -1,29 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'onboarding_local_data_source.dart';
+part of 'onboarding_repository.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$onboardingLocalDataSourceHash() =>
-    r'304532403b8c2a838f2027d3c9b5822b508fe624';
+String _$onboardingRepositoryHash() =>
+    r'50f0f5d4406378b8a413d5506003855fdfab368f';
 
-/// See also [onboardingLocalDataSource].
-@ProviderFor(onboardingLocalDataSource)
-final onboardingLocalDataSourceProvider =
-    Provider<OnboardingLocalDataSource>.internal(
-  onboardingLocalDataSource,
-  name: r'onboardingLocalDataSourceProvider',
+/// See also [onboardingRepository].
+@ProviderFor(onboardingRepository)
+final onboardingRepositoryProvider =
+    AutoDisposeProvider<OnboardingRepository>.internal(
+  onboardingRepository,
+  name: r'onboardingRepositoryProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$onboardingLocalDataSourceHash,
+      : _$onboardingRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
-typedef OnboardingLocalDataSourceRef = ProviderRef<OnboardingLocalDataSource>;
+typedef OnboardingRepositoryRef = AutoDisposeProviderRef<OnboardingRepository>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

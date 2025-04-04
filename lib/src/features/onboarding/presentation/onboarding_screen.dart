@@ -1,5 +1,6 @@
 import 'package:aquaponics/src/features/onboarding/presentation/onboarding_screen_controller.dart';
 import 'package:aquaponics/src/routing/app_router.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -67,11 +68,14 @@ class _OnboardingScreenState extends ConsumerState<OnboardingScreen> {
             pages: state.onboardingContents.map((content) {
               return PageViewModel(
                 title: content.title,
-                body: content.body,
-                image: Image.asset(
-                  content.imagePath,
-                  errorBuilder: (context, error, stackTrace) =>
-                      const Icon(Icons.error_outline, size: 100),
+                body: content.description,
+                image: CachedNetworkImage(
+                  imageUrl: content.imageUrl,
+                  memCacheWidth:
+                      (MediaQuery.of(context).size.width * 3).toInt(),
+                  memCacheHeight: (MediaQuery.of(context).size.height).toInt(),
+                  placeholder: (context, url) => CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => Icon(Icons.error),
                 ),
               );
             }).toList(),

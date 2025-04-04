@@ -7,7 +7,7 @@ part of 'onboarding_screen_controller.dart';
 // **************************************************************************
 
 String _$onboardingScreenControllerHash() =>
-    r'11708b73ca1d8cd31a077c93211234d3a567dd1f';
+    r'5ddb4521f7e50df09de481469f6353355745b47f';
 
 /// See also [OnboardingScreenController].
 @ProviderFor(OnboardingScreenController)

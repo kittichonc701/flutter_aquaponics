@@ -1,5 +1,5 @@
-import 'package:aquaponics/src/features/onboarding/data/repositories/onboarding_repository.dart';
-import 'package:aquaponics/src/features/onboarding/domain/onboarding.dart';
+import 'package:aquaponics/src/features/onboarding/data/onboarding_repository.dart';
+import 'package:aquaponics/src/features/onboarding/domain/onboard.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'onboarding_screen_controller.g.dart';
@@ -26,7 +26,7 @@ class OnboardingScreenController extends _$OnboardingScreenController {
     state = const AsyncValue.loading();
     try {
       final contents =
-          await ref.read(onboardingRepositoryProvider).getOnboardingContents();
+          await ref.read(onboardingRepositoryProvider).fetchOnboarding();
 
       if (contents.isEmpty) {
         throw Exception('No onboarding content available');
@@ -107,7 +107,7 @@ class OnboardingScreenController extends _$OnboardingScreenController {
 class OnboardingState {
   final int currentPage;
   final bool isLoading;
-  final List<Onboarding> onboardingContents;
+  final List<Onboard> onboardingContents;
   final bool isOnboardingCompleted;
 
   const OnboardingState({
@@ -120,7 +120,7 @@ class OnboardingState {
   OnboardingState copyWith({
     int? currentPage,
     bool? isLoading,
-    List<Onboarding>? onboardingContents,
+    List<Onboard>? onboardingContents,
     bool? isOnboardingCompleted,
   }) {
     return OnboardingState(

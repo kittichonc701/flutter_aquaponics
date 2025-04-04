@@ -7,6 +7,7 @@ import 'package:aquaponics/src/features/control/presentation/history/history_scr
 import 'package:aquaponics/src/features/monitoring/presentation/dash_board_screen.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/notifications_screen.dart';
 import 'package:aquaponics/src/routing/go_router_refresh_stream.dart';
+import 'package:aquaponics/src/routing/not_found_screen.dart';
 import 'package:aquaponics/src/routing/scaffold_with_nested_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -154,5 +155,6 @@ GoRouter goRouter(Ref ref) {
         ],
       ),
     ],
+    errorBuilder: (context, state) => const NotFoundScreen(),
   );
 }
