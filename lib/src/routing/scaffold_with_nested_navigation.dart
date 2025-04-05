@@ -56,20 +56,22 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blueAccent,
-      body: body,
-      bottomNavigationBar: CurvedNavigationBar(
-        index: currentIndex,
-        items: [
-          const Icon(Icons.home_filled),
-          const Icon(Icons.settings),
-          const Icon(Icons.history),
-        ],
-        animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 600),
-        letIndexChange: (index) => true,
-        onTap: onDestinationSelected,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.blueAccent,
+        body: body,
+        bottomNavigationBar: CurvedNavigationBar(
+          index: currentIndex,
+          items: [
+            const Icon(Icons.home_filled),
+            const Icon(Icons.settings),
+            const Icon(Icons.history),
+          ],
+          animationCurve: Curves.easeInOut,
+          animationDuration: Duration(milliseconds: 600),
+          letIndexChange: (index) => true,
+          onTap: onDestinationSelected,
+        ),
       ),
     );
   }

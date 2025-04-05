@@ -1,5 +1,6 @@
 import 'package:aquaponics/src/localization/string_hardcoded.dart';
 import 'package:aquaponics/src/routing/app_router.dart';
+import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -15,6 +16,9 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       restorationScopeId: 'app',
       onGenerateTitle: (BuildContext context) => 'Aquaponics'.hardcoded,
+      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
+      themeMode: ThemeMode.system,
     );
   }
 }
