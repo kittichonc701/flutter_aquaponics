@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/constants/constants.dart';
+import 'package:aquaponics/src/constants/app_sizes.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +25,7 @@ class Chart extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(height: defaultPadding),
+                SizedBox(height: Sizes.p16),
                 Text(
                   "29.1",
                   style: Theme.of(context).textTheme.headlineMedium!.copyWith(
@@ -46,7 +46,7 @@ class Chart extends StatelessWidget {
 
 List<PieChartSectionData> paiChartSelectionData = [
   PieChartSectionData(
-    color: primaryColor,
+    color: Colors.red,
     value: 25,
     showTitle: false,
     radius: 25,
@@ -70,7 +70,7 @@ List<PieChartSectionData> paiChartSelectionData = [
     radius: 16,
   ),
   PieChartSectionData(
-    color: primaryColor.withOpacity(0.1),
+    color: Colors.red.withOpacity(0.1),
     value: 25,
     showTitle: false,
     radius: 13,

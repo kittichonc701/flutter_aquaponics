@@ -2,10 +2,9 @@
 import 'package:aquaponics/src/localization/string_hardcoded.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 
-// Stateful navigation based on:
-// https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
 class ScaffoldWithNestedNavigation extends StatelessWidget {
   const ScaffoldWithNestedNavigation({
     Key? key,
@@ -16,10 +15,6 @@ class ScaffoldWithNestedNavigation extends StatelessWidget {
   void _goBranch(int index) {
     navigationShell.goBranch(
       index,
-      // A common pattern when using bottom navigation bars is to support
-      // navigating to the initial location when tapping the item that is
-      // already active. This example demonstrates how to support this behavior,
-      // using the initialLocation parameter of goBranch.
       initialLocation: index == navigationShell.currentIndex,
     );
   }
@@ -63,9 +58,10 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
         bottomNavigationBar: CurvedNavigationBar(
           index: currentIndex,
           items: [
-            const Icon(Icons.home_filled),
-            const Icon(Icons.settings),
-            const Icon(Icons.history),
+            const FaIcon(FontAwesomeIcons.house),
+            const FaIcon(FontAwesomeIcons.chartSimple),
+            const FaIcon(FontAwesomeIcons.plug),
+            const FaIcon(FontAwesomeIcons.gear),
           ],
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),

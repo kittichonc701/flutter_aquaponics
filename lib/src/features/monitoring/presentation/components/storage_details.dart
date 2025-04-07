@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/constants/constants.dart';
+import 'package:aquaponics/src/constants/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 import 'chart.dart';
@@ -11,10 +11,11 @@ class StorageDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
+      padding: EdgeInsets.all(Sizes.p16),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: theme.colorScheme.secondary,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -27,7 +28,7 @@ class StorageDetails extends StatelessWidget {
               fontWeight: FontWeight.w500,
             ),
           ),
-          SizedBox(height: defaultPadding),
+          SizedBox(height: Sizes.p16),
           Chart(),
           StorageInfoCard(
             svgSrc: "assets/icons/Documents.svg",

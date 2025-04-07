@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/constants/constants.dart';
+import 'package:aquaponics/src/constants/app_sizes.dart';
 import 'package:aquaponics/src/features/monitoring/domain/my_files.dart';
 import 'package:aquaponics/src/utils/responsive.dart';
 import 'package:flutter/material.dart';
@@ -25,9 +25,8 @@ class MyFiles extends StatelessWidget {
             ElevatedButton.icon(
               style: TextButton.styleFrom(
                 padding: EdgeInsets.symmetric(
-                  horizontal: defaultPadding * 1.5,
-                  vertical:
-                      defaultPadding / (Responsive.isMobile(context) ? 2 : 1),
+                  horizontal: Sizes.p16 * 1.5,
+                  vertical: Sizes.p16 / (Responsive.isMobile(context) ? 2 : 1),
                 ),
               ),
               onPressed: () {},
@@ -36,7 +35,7 @@ class MyFiles extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(height: defaultPadding),
+        SizedBox(height: Sizes.p16),
         Responsive(
           mobile: FileInfoCardGridView(
             crossAxisCount: size.width < 650 ? 2 : 4,
@@ -70,8 +69,8 @@ class FileInfoCardGridView extends StatelessWidget {
       itemCount: demoMyFiles.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
-        crossAxisSpacing: defaultPadding,
-        mainAxisSpacing: defaultPadding,
+        crossAxisSpacing: Sizes.p16,
+        mainAxisSpacing: Sizes.p16,
         childAspectRatio: childAspectRatio,
       ),
       itemBuilder: (context, index) => FileInfoCard(info: demoMyFiles[index]),

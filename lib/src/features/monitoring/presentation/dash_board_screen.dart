@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:aquaponics/src/constants/app_sizes.dart';
-import 'package:aquaponics/src/constants/constants.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/components/header.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/components/recent_files.dart';
 import 'package:aquaponics/src/features/monitoring/presentation/components/storage_details.dart';
@@ -33,7 +32,7 @@ class _DashboardContentsState extends ConsumerState<DashboardContents> {
       child: Column(
         children: [
           Header(),
-          SizedBox(height: defaultPadding),
+          SizedBox(height: Sizes.p16),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -41,17 +40,14 @@ class _DashboardContentsState extends ConsumerState<DashboardContents> {
                 flex: 5,
                 child: Column(
                   children: [
-                    SizedBox(height: defaultPadding),
+                    gapH16,
                     RecentFiles(),
-                    if (Responsive.isMobile(context))
-                      SizedBox(height: defaultPadding),
+                    if (Responsive.isMobile(context)) gapH16,
                     if (Responsive.isMobile(context)) StorageDetails(),
                   ],
                 ),
               ),
-              if (!Responsive.isMobile(context))
-                SizedBox(width: defaultPadding),
-              // On Mobile means if the screen is less than 850 we don't want to show it
+              if (!Responsive.isMobile(context)) gapH16,
               if (!Responsive.isMobile(context))
                 Expanded(
                   flex: 2,

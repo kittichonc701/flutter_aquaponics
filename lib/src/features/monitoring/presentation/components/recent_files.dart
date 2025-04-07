@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/constants/constants.dart';
+import 'package:aquaponics/src/constants/app_sizes.dart';
 import 'package:aquaponics/src/features/monitoring/domain/recent_file.dart';
 
 import 'package:flutter/material.dart';
@@ -11,10 +11,11 @@ class RecentFiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      padding: EdgeInsets.all(defaultPadding),
+      padding: EdgeInsets.all(Sizes.p16),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: theme.colorScheme.secondary,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
       ),
       child: Column(
@@ -27,7 +28,7 @@ class RecentFiles extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: DataTable(
-              columnSpacing: defaultPadding,
+              columnSpacing: Sizes.p16,
               // minWidth: 600,
               columns: [
                 DataColumn(
@@ -64,7 +65,7 @@ DataRow recentFileDataRow(RecentFile fileInfo) {
               width: 30,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.p16),
               child: Text(fileInfo.title!),
             ),
           ],

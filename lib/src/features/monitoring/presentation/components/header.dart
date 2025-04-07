@@ -1,4 +1,4 @@
-import 'package:aquaponics/src/constants/constants.dart';
+import 'package:aquaponics/src/constants/app_sizes.dart';
 import 'package:aquaponics/src/utils/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -11,6 +11,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         if (!Responsive.isDesktop(context))
           IconButton(
@@ -24,7 +25,6 @@ class Header extends StatelessWidget {
           ),
         if (!Responsive.isMobile(context))
           Spacer(flex: Responsive.isDesktop(context) ? 2 : 1),
-        Expanded(child: SearchField()),
         ProfileCard()
       ],
     );
@@ -38,14 +38,15 @@ class ProfileCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Container(
-      margin: EdgeInsets.only(left: defaultPadding),
+      margin: EdgeInsets.only(left: Sizes.p16),
       padding: EdgeInsets.symmetric(
-        horizontal: defaultPadding,
-        vertical: defaultPadding / 2,
+        horizontal: Sizes.p16,
+        vertical: Sizes.p16 / 2,
       ),
       decoration: BoxDecoration(
-        color: secondaryColor,
+        color: theme.colorScheme.secondary,
         borderRadius: const BorderRadius.all(Radius.circular(10)),
         border: Border.all(color: Colors.white10),
       ),
@@ -57,11 +58,9 @@ class ProfileCard extends StatelessWidget {
           ),
           if (!Responsive.isMobile(context))
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+              padding: const EdgeInsets.symmetric(horizontal: Sizes.p16 / 2),
               child: Text("Angelina Jolie"),
             ),
-          Icon(Icons.keyboard_arrow_down),
         ],
       ),
     );
@@ -75,10 +74,11 @@ class SearchField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return TextField(
       decoration: InputDecoration(
         hintText: "Search",
-        fillColor: secondaryColor,
+        fillColor: theme.colorScheme.secondary,
         filled: true,
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
@@ -87,10 +87,10 @@ class SearchField extends StatelessWidget {
         suffixIcon: InkWell(
           onTap: () {},
           child: Container(
-            padding: EdgeInsets.all(defaultPadding * 0.75),
-            margin: EdgeInsets.symmetric(horizontal: defaultPadding / 2),
+            padding: EdgeInsets.all(Sizes.p16 * 0.75),
+            margin: EdgeInsets.symmetric(horizontal: Sizes.p16 / 2),
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: theme.colorScheme.primary,
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
             child: SvgPicture.asset("assets/icons/Search.svg"),

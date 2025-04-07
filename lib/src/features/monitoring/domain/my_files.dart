@@ -1,4 +1,3 @@
-import 'package:aquaponics/src/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {
@@ -22,7 +21,7 @@ List demoMyFiles = [
     numOfFiles: 1328,
     svgSrc: "assets/icons/Documents.svg",
     totalStorage: "1.9GB",
-    color: primaryColor,
+    color: Colors.red,
     percentage: 35,
   ),
   CloudStorageInfo(

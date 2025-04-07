@@ -1,5 +1,4 @@
 import 'package:aquaponics/src/features/auth/domain/app_user.dart';
-import 'package:aquaponics/src/services/app_database.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:sembast/sembast_io.dart';
@@ -22,7 +21,7 @@ class SembastAuthRepository implements LocalAuthRepository {
   final Database _db;
   final StoreRef<String, dynamic> store;
 
-  SembastAuthRepository(this._db) : store = AppDatabase().getStore('auth');
+  SembastAuthRepository(this._db, this.store);
 
   @override
   Future<void> cacheUser(AppUser user) async {
