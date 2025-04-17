@@ -38,6 +38,8 @@ dependencies:
 
   path: any
   font_awesome_flutter: ^10.8.0
+  flutter_gen: ^5.10.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -47,6 +49,7 @@ dev_dependencies:
   custom_lint: ^0.7.5
 
   flutter_lints: ^5.0.0
+  flutter_gen_runner: ^5.10.0
 
 flutter:
   uses-material-design: true

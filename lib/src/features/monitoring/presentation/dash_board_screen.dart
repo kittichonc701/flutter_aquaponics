@@ -41,7 +41,21 @@ class _DashboardContentsState extends ConsumerState<DashboardContents> {
                 child: Column(
                   children: [
                     gapH16,
-                    RecentFiles(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        RecentFiles(),
+                        RecentFiles(),
+                      ],
+                    ),
+                    gapH16,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        RecentFiles(),
+                        RecentFiles(),
+                      ],
+                    ),
                     if (Responsive.isMobile(context)) gapH16,
                     if (Responsive.isMobile(context)) StorageDetails(),
                   ],

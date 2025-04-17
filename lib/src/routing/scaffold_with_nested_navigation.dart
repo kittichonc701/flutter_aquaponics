@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:aquaponics/src/localization/string_hardcoded.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -51,9 +50,10 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: theme.primaryColor,
         body: body,
         bottomNavigationBar: CurvedNavigationBar(
           index: currentIndex,
@@ -63,6 +63,7 @@ class ScaffoldWithNavigationBar extends StatelessWidget {
             const FaIcon(FontAwesomeIcons.plug),
             const FaIcon(FontAwesomeIcons.gear),
           ],
+          backgroundColor: theme.primaryColor,
           animationCurve: Curves.easeInOut,
           animationDuration: Duration(milliseconds: 600),
           letIndexChange: (index) => true,
@@ -113,11 +114,6 @@ class ScaffoldWithNavigationRail extends StatelessWidget {
                 icon: const Icon(Icons.notifications_outlined),
                 selectedIcon: const Icon(Icons.notifications),
                 label: Text('Notification'.hardcoded),
-              ),
-              NavigationRailDestination(
-                icon: const Icon(Icons.person_outline),
-                selectedIcon: const Icon(Icons.person),
-                label: Text('Account'.hardcoded),
               ),
             ],
           ),

@@ -12,6 +12,17 @@ class ControlPanelScreen extends ConsumerStatefulWidget {
 class _ControlPanelScreenState extends ConsumerState<ControlPanelScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Column(
+      children: [
+        Container(),
+        Text(
+          'แมว',
+          style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+              ),
+        ),
+      ],
+    );
   }
 }

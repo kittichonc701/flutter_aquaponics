@@ -16,8 +16,8 @@ class MyApp extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       restorationScopeId: 'app',
       onGenerateTitle: (BuildContext context) => 'Aquaponics'.hardcoded,
-      theme: FlexThemeData.light(scheme: FlexScheme.mandyRed),
-      darkTheme: FlexThemeData.dark(scheme: FlexScheme.mandyRed),
+      theme: FlexThemeData.light(scheme: FlexScheme.blackWhite),
+      darkTheme: FlexThemeData.dark(scheme: FlexScheme.blackWhite),
       themeMode: ThemeMode.system,
     );
   }
